@@ -9,7 +9,7 @@
     const bikes = [
         {
             nome: 'graziella',
-            peso: 10
+            peso: 30
         },
         {
             nome: 'hawk',
@@ -17,21 +17,32 @@
         },
         {
             nome: 'thunder',
-            peso: 30
+            peso: 10
         },
     ]
     console.log(bikes);
 
-// destrutturo l'array per estrarre la bici con peso minore 
-    const [primoOggetto] = bikes;
-    console.log(primoOggetto);
+// utilizzo ciclo per estrarre l oggetto bici con peso minore
+    // di default definisco variabile bicileggera
+    let biciLeggera = bikes[0];
+    
+    for (let i = 0; i < bikes.length; i++) {
+        let thisBike = bikes[i];
+
+        // se la bici trovata è più leggera della bici leggera di default, questa diventerà la bici più leggera 
+        if (thisBike.peso < biciLeggera.peso) {
+            biciLeggera = thisBike;
+        }
+
+    }
+    console.log(biciLeggera);
 
 // destrutturo l'oggetto ottenuto per estrarre nome e peso
-    const {nome, peso} = primoOggetto;
+    let {nome, peso} = biciLeggera;
     console.log('oggetto destrutturato: ', nome, peso);
 
 // stampo a schermo utilizzando template literal 
-    const biciLeggera = `
+    biciLeggera = `
     <h2>Nome: ${nome}</h2>
     <h2>Peso: ${peso}</h2>
     `;
@@ -39,3 +50,6 @@
     document.getElementById('bici').innerHTML = biciLeggera;
 
 // --------------------------------------------------------------------------------------------------
+
+// 2.
+
