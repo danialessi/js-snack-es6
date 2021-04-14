@@ -81,7 +81,7 @@
     
     // definisco nuovo array
     let nuovoArray = [];
-    
+
     for (let i = 0; i < teams.length; i++) {
         let thisTeam = teams[i];
         
@@ -91,7 +91,16 @@
         let {nome, falli_subiti} = thisTeam;
         // console.log(nome, falli_subiti);
 
-        nuovoArray.push(nome, falli_subiti);
+        // creo nuovo oggetto con variabili-chiavi ottenute 
+        let newTeam = {
+            nome,
+            falli_subiti
+        };
+        // console.log(newTeam);
+
+        // pusho nel nuovo array il nuovo oggetto-squadra 
+        nuovoArray.push(newTeam);
+
     }
 
     console.log(nuovoArray);
