@@ -83,7 +83,7 @@
     let nuovoArray = [];
 
     for (let i = 0; i < teams.length; i++) {
-        let thisTeam = teams[i];
+        let thisTeam = teams[i];  //<---si puo usare anche const 
         
         thisTeam.punti_fatti = getRndInteger(1, 100);
         thisTeam.falli_subiti = getRndInteger(1, 20);
